@@ -1,0 +1,22 @@
+services:
+  react-app:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app  # Mount everything into /app
+      - /app/node_modules  # Prevents overwriting node_modules
+    environment:
+      - WATCHPACK_POLLING=true  # Enable Webpack polling
+  test:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - WATCHPACK_POLLING=true  # Enable Webpack polling
+    command: ["npm","run","test"]
