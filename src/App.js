@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload. This is Mauricio. Second time. First deploy in azure.
+          Edit <code>src/App.js</code> and save to reload. This is Mauricio. Second time. Testing deploy to azure con ACR.
         </p>
         <a
           className="App-link"
