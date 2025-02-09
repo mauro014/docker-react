@@ -33,7 +33,6 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Debug - Print Branch Reference
-        run: echo "Current branch ref: $GITHUB_REF"
 
       - name: Azure Login # https://github.com/marketplace/actions/azure-container-registry-login
         uses: azure/docker-login@v2
