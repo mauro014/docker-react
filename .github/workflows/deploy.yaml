@@ -34,12 +34,12 @@ jobs:
       - name: Azure Login # https://github.com/marketplace/actions/azure-container-registry-login
         uses: azure/docker-login@v2
         with: 
-          login-server: ${{ secrets.AZURE_REGISTRY_LOGIN_SERVER }}
-          username: ${{ secrets.REGISTRY_USERNAME }}
+          login-server: ${{ secrets.AZURE_REGISTRY_NAME }}
+          username: ${{ secrets.AZURE_REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
 
       - name: Build and Push Docker Image to Azure Container Registry
         run: |
-          docker build . -t ${{ secrets.AZURE_REGISTRY_NAME }}.azurecr.io/frontend:latest .
-          docker push ${{ secrets.AZURE_REGISTRY_NAME }}.azurecr.io/frontend:latest
+          docker build . -t ${{ secrets.AZURE_REGISTRY_NAME }}/frontend:latest .
+          docker push ${{ secrets.AZURE_REGISTRY_NAME }}/frontend:latest
 
