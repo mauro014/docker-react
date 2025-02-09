@@ -4,7 +4,7 @@ on:
   push:
     branches:
       -master
-      -azure-CI-ACR
+      -azure-ci-acr
 
 jobs:
   build:
@@ -26,7 +26,7 @@ jobs:
         run: docker run -e CI=true mauro014/react-test npm test
 
   deploy-azure-ACR: #With Azure Container Registry
-    if: contains(github.ref, 'azure-CI-ACR')
+    if: contains(github.ref, 'azure-ci-acr')
     runs-on: ubuntu-latest
     needs: build  # Ensure testing completes before deployment
     steps: 
