@@ -74,5 +74,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ vars.AZURE_WEBAPP_NAME_DOCKERHUB }}
-          images: ${{ vars.DOCKERHUB_USERNAME }}/react-test:latest
+          images: ${{ vars.DOCKERHUB_USERNAME }}/react-docker:latest
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_DOCKER_HUB }}
